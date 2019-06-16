@@ -7,6 +7,8 @@ ENV WORKSPACE_DIR="/app/builds" \
 
 RUN apt-get update && apt-get install -y python-pip && rm -rf /var/lib/apt/lists/*
 
+RUN apt-get install -y maven
+
 COPY requirements.txt /app/
 RUN pip install --disable-pip-version-check --no-cache-dir -r /app/requirements.txt
 
